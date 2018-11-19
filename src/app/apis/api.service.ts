@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders} from  '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  API_URL  =  'http://localhost/restaurant-apis/public/api';
+
+  API_URL  =  'http://restaurant-apis.local/api';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
@@ -13,6 +15,7 @@ export class ApiService {
       'changeOrigin':'true'
       })
   };
+  
   constructor(private httpclient:HttpClient) {}
    getUserslist()
    {
@@ -20,6 +23,6 @@ export class ApiService {
    }
    registerUser(user)
    {
-    return  this.httpclient.post(`${this.API_URL}/registerUser`,user);
-   }
+     return  this.httpclient.post(`${this.API_URL}/registerUser`,user);
+  }
 }
