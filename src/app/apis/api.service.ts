@@ -5,7 +5,7 @@ import { HttpClient,HttpHeaders} from  '@angular/common/http';
   providedIn: 'root'
 })
 export class ApiService {
-  API_URL  =  'http://localhost/restaurant-apis/public/api';
+  API_URL  =  'http://restaurantapis.local/api';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',

@@ -12,6 +12,7 @@ export class RegisterComponent implements OnInit {
   constructor(private apiService:ApiService) {
 
   }
+  //private UserArray=[];
   ngOnInit() {
     console.log('call',this.getUserslist());
   }
@@ -24,6 +25,7 @@ export class RegisterComponent implements OnInit {
   }
   public registerUser(event)
   {
+
     event.preventDefault()
     const target=event.target
     const firstName=target.querySelector('#firstName').value;
@@ -42,7 +44,10 @@ export class RegisterComponent implements OnInit {
       email: inputEmail,
       password: inputPassword
      };
-     this.apiService.registerUser(user).subscribe((response) => {
+     this.apiService.registerUser(user).subscribe((response:Array<object>) => {
+      this.Userslist  =  response;
+      
+      console.log('User Response',this.Userslist.status);
           console.log(response);
        });
   }
