@@ -16,6 +16,10 @@ const routes: Routes = [
   {
     path: 'restaurant',
     loadChildren: './restaurant/restaurant.module#RestaurantModule'
+  },
+  {
+    path: 'menu',
+    loadChildren: './menu/menu.module#MenuModule'
   }
 ];
 
